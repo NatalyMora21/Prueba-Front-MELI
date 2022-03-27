@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { getAllItems }  from '../services/item'
+import {initItems} from '../stateHandler/actions/itemAction'
+
 
 const Search = () => {
 
     const [search, setSearch] = useState("");
 
+    const dispatch = useDispatch ();
+
     const handleInputChange = (event) => {
         setSearch(event.target.value);
     }
 
-    const handleSubmit = (event) => {
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
         let info = search;
         console.log(search);
@@ -17,6 +23,11 @@ const Search = () => {
         if (info != '') {
             //dispatch(searchGeneral(datos.searchWord, datos.options, datos.date))
             //setMensajealert(false);
+            console.log("INGRESO")
+            const data = await getAllItems(info);
+            console.log("---")
+            console.log(data)
+            dispatch(initItems(data));
         }
 
     }
