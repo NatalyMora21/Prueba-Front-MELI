@@ -6,11 +6,12 @@ export const itemReducer = (state=[], action) => {
 
     switch(action.type){
         case "LIST-NOTE" : {
-            return (action.paylod)
+
+            return (action.payload)
         }
 
         case "FILTER-NOTE" : {
-            return (action.paylod)
+            return (action.payload)
         }
 
         default:

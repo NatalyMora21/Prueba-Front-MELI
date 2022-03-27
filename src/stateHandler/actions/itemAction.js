@@ -1,19 +1,14 @@
 
 
 
-export const initItems = notes => {
-
+export const initItems = items => {
     return {
         type: 'LIST-NOTE',
-        payload: notes
+        payload: items
     }
 
 
 }
 
-export const filterItems = notes => {
 
-
-
-}
 
