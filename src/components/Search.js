@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getAllItems }  from '../services/itemService'
-import {initItems} from '../stateHandler/actions/itemAction'
+import { getAllItems } from '../services/itemService'
+import { initItems } from '../stateHandler/actions/itemAction'
 
 
 const Search = () => {
 
     const [search, setSearch] = useState("");
 
-    const dispatch = useDispatch ();
+    const dispatch = useDispatch();
 
     const handleInputChange = (event) => {
         setSearch(event.target.value);
@@ -33,14 +33,10 @@ const Search = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-
-                <div className="input-group mb-3 ">
-                    <input id="searchWord" name="searchWord" type="text" onChange={handleInputChange}/>
-                    <button type="submit" id="button-addon2" >Buscar </button>
-                </div>
-
+        <div class="container-fluid">
+            <form class="d-flex" onSubmit={handleSubmit}>
+                <input class="form-control" id="searchWord" name="searchWord"  placeholder="Nunca dejes de buscar" type="text" onChange={handleInputChange} />
+                <button type="submit" id="button-addon2" >Buscar </button>
             </form>
         </div>
     )
