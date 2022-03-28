@@ -12,7 +12,7 @@ export const getAllItems = async (search) => {
 }
 
 
-export const getSearchItems = async (id) => {
+export const getItem = async (id) => {
   const query = queryInfoItem(id)
   return request('http://localhost:4001/graph', query).then((data) => data.getAllItemsType)
 

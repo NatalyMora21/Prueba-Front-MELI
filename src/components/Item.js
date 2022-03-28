@@ -1,31 +1,32 @@
 
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { getItem } from '../services/item';
 
 export const Item = (id) => {
 
-    const state = useSelector(state => state.items)
+    const [item, setItem] = useState();
 
-    console.log(state)
 
-    const [items, setItems] = useState([]);
+    useEffect(async () => {
 
-    useEffect(() => {
-        setItems(state)
-    }, [state])
+        const data = await getItem(id);
+        setItem(data);
+
+    }, [])
 
 
     return (
 
-        items.map(item => {
-            return(
-                <>
-                    <img src={`${item.picture}`}></img>
-                    <p>{item.title}</p>
-                    <p>{item.price.amount}</p>
-                </>
-            )
-        })
+        <div>
+            <p>{item.title}</p>
+            <p>{item.title}</p>
+            <p>{item.price.amount}</p>
+            <p>{item.description}</p>
+
+        </div>
+
+
+
     )
 
 }
