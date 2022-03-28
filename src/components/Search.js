@@ -33,10 +33,6 @@ const Search = () => {
     }
 
     return (
-
-
-
-
         <div>
             <form onSubmit={handleSubmit}>
 
@@ -48,9 +44,6 @@ const Search = () => {
             </form>
         </div>
     )
-
-
-
 }
 
 

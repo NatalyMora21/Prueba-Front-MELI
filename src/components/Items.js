@@ -18,7 +18,6 @@ export const Items = () => {
     return (
 
         items.map(item => {
-
             return(
                 <>
                     <img src={`${item.picture}`}></img>
@@ -27,8 +26,6 @@ export const Items = () => {
                 </>
             )
         })
-
-    
     )
 
-    }
+}
