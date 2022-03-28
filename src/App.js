@@ -2,11 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 
 import Search from './components/Search';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { getAllItems } from './services/item';
-import {initItems} from './stateHandler/actions/itemAction'
 import { Items } from './components/Items';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from './pages/Home';
+import { Item } from './components/Item';
 
 
 function App() {
@@ -24,8 +23,23 @@ function App() {
 
   return (
     <div className="App">
-      <Search></Search>
-      <Items></Items>
+
+      <BrowserRouter>
+
+        <Routes>
+          <Route exact path="/" element={<Home />}>
+     
+          </Route>
+
+          <Route path="/items?search">
+
+          </Route>
+          <Route path="/items/:id" element= {<Item/>}>
+            
+          </Route>
+        </Routes>
+
+      </BrowserRouter>
     </div>
   );
 }

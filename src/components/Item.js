@@ -1,15 +1,21 @@
 
 import React, { useEffect, useState } from 'react';
-import { getItem } from '../services/item';
+import { useParams } from 'react-router';
+import { getItem } from '../services/itemService';
 
-export const Item = (id) => {
+export const Item = () => {
 
-    const [item, setItem] = useState();
+    const { id } = useParams()
+    console.log(id)
+
+    const [item, setItem] = useState("");
 
 
     useEffect(async () => {
 
         const data = await getItem(id);
+        console.log("data---")
+        console.log(data)
         setItem(data);
 
     }, [])
@@ -18,10 +24,16 @@ export const Item = (id) => {
     return (
 
         <div>
-            <p>{item.title}</p>
-            <p>{item.title}</p>
-            <p>{item.price.amount}</p>
-            <p>{item.description}</p>
+            {item && 
+            
+                <p>
+                    <img src={`${item.picture}`}></img>
+                    <p>{item.title}</p>
+                    <p>{item.price.amount}</p>
+                </p>
+                
+            
+            }
 
         </div>
 

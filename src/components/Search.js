@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getAllItems }  from '../services/item'
+import { getAllItems }  from '../services/itemService'
 import {initItems} from '../stateHandler/actions/itemAction'
 
 

@@ -14,6 +14,7 @@ export const getAllItems = async (search) => {
 
 export const getItem = async (id) => {
   const query = queryInfoItem(id)
-  return request('http://localhost:4001/graph', query).then((data) => data.getAllItemsType)
+  console.log("---")
+  return request('http://localhost:4001/graph', query).then((data) => data.getItem)
 
 }

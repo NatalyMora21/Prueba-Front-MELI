@@ -35,10 +35,10 @@ export const queryInfoItem = (id) => {
                 price { 
                 currency 
                 amount
+                }
+                picture
                 
             } 
-        
-            }
         }
         `
     )

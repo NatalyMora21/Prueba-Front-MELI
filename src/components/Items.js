@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import {NavLink} from 'react-router-dom';
 
 export const Items = () => {
 
@@ -22,6 +23,7 @@ export const Items = () => {
                 <>
                     <img src={`${item.picture}`}></img>
                     <p>{item.title}</p>
+                    <NavLink to={`/items/${item.id}`}>{item.title}</NavLink>
                     <p>{item.price.amount}</p>
                 </>
             )
