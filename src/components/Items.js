@@ -20,7 +20,7 @@ export const Items = () => {
 
         items.map(item => {
             return (
-                <div class=" mb-3" >
+                <div class=" mb-3" className='card-general pb-5 ' >
                     <div class="row g-0">
                         <div class="col-md-4">
                             <img src={`${item.picture}`} class="img-fluid rounded-start image-item" alt="..." />
@@ -28,7 +28,9 @@ export const Items = () => {
                         <div class="col-md-5">
                             <div class="card-body">
                                 <h4>${item.price.amount}</h4>
-                                <h5 class="card-title">{item.title}</h5>
+                                <div className='title-direc'>
+                                    <NavLink to={`/items/${item.id}`}>{item.title}</NavLink>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-3">

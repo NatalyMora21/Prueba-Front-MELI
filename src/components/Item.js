@@ -12,9 +12,8 @@ export const Item = () => {
 
 
     useEffect(async () => {
-
+        
         const data = await getItem(id);
-        console.log("data---")
         console.log(data)
         setItem(data);
 
@@ -24,15 +23,32 @@ export const Item = () => {
     return (
 
         <div>
-            {item && 
-            
-                <p>
-                    <img src={`${item.picture}`}></img>
-                    <p>{item.title}</p>
-                    <p>{item.price.amount}</p>
-                </p>
-                
-            
+            {item &&
+
+                <div class=" mb-3" className='card-general pb-5 ' >
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <img src={`${item.picture}`} class="img-fluid rounded-start " alt="..." />
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h4>${item.price.amount}</h4>
+                                <div className='title-direc'>
+                                    {item.title}
+                                </div>
+                                <button type="button" class="btn btn-primary button-buy">comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-md-7 car-description">
+                            <h5>Descripción del producto</h5>
+                            <p>{item.description}</p>
+                        </div>
+                    </div>
+
+
+                </div>
             }
 
         </div>

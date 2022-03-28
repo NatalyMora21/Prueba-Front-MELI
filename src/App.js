@@ -5,7 +5,7 @@ import Search from './components/Search';
 import { Items } from './components/Items';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from './pages/Home';
-import { Item } from './components/Item';
+import { InfoItem } from './pages/InfoItem';
 
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
           <Route path="/items?search">
 
           </Route>
-          <Route path="/items/:id" element= {<Item/>}>
+          <Route path="/items/:id" element= {<InfoItem/>}>
             
           </Route>
         </Routes>

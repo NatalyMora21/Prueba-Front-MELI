@@ -37,6 +37,7 @@ export const queryInfoItem = (id) => {
                 amount
                 }
                 picture
+                description
                 
             } 
         }
