@@ -1,11 +1,29 @@
 import axios from 'axios';
+import { request, gql } from 'graphql-request'
 
 const baserUrl = ''
 
 export const getAllItems = async  (search) => {
 
-    const data = await axios.post('http://localhost:4001/graph', {query: `query {getAllItemsType (search:"${search}") {id title price  { currency amount decimals} picture condition free_shipping sold_quantity}}`})
-    return (data);
+    const query = gql`
+    {
+        getAllItemsType(search: "${search}") {
+            id
+            title
+            price
+            { currency amount decimals} 
+            picture 
+            condition 
+            free_shipping 
+            sold_quantity
+      }
+    }
+  `
+  return request('http://localhost:4001/graph', query).then((data) => data.getAllItemsType)
+
+
+
+        
 }
 
 

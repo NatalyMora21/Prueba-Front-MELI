@@ -7,23 +7,28 @@ export const Items = () => {
     const state = useSelector(state => state.items)
 
     console.log(state)
-    console.log("state---")
+
     const [items, setItems] = useState([]);
 
-
-
-    useEffect(async () => {
-        setItems(state);
+    useEffect(() => {
+        setItems(state)
     }, [state])
 
 
     return (
 
+        items.map(item => {
 
-        <div>
+            return(
+                <>
+                    <img src={`${item.picture}`}></img>
+                    <p>{item.title}</p>
+                    <p>{item.price.amount}</p>
+                </>
+            )
+        })
 
-
-        </div>
-
+    
     )
-}
+
+    }
