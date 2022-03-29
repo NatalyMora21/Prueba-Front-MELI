@@ -2,15 +2,14 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { useParams } from 'react-router';
 
 export const Items = () => {
 
     const state = useSelector(state => state.items)
-
-    console.log(state)
+    const [loading, setLoading] = useState(false);
 
     const [items, setItems] = useState([]);
-
     useEffect(() => {
         setItems(state)
     }, [state])
@@ -29,7 +28,7 @@ export const Items = () => {
                             <div class="card-body">
                                 <h5>${item.price.amount}</h5>
                                 <div className='title-direc'>
-                                    <NavLink to={`/items/${item.id}`}>{item.title}</NavLink>
+                                    <NavLink to={`/item/${item.id}`}>{item.title}</NavLink>
                                 </div>
                             </div>
                         </div>

@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import Search from './components/Search';
-import { Items } from './components/Items';
+import { ItemsSearh } from './pages/Items';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from './pages/Home';
 import { InfoItem } from './pages/InfoItem';
@@ -31,10 +31,10 @@ function App() {
      
           </Route>
 
-          <Route path="/items?search">
+          <Route path="/items/search" element={<ItemsSearh />}>
 
           </Route>
-          <Route path="/items/:id" element= {<InfoItem/>}>
+          <Route path="/item/:id" element= {<InfoItem/>}>
             
           </Route>
         </Routes>
