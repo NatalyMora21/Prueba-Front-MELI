@@ -21,22 +21,22 @@ export const Items = () => {
 
         items.map(item => {
             return (
-                <div class=" mb-3" className='card-general pb-3 ' >
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src={`${item.picture}`} class="img-fluid rounded-start image-item" alt="..." />
+                <div className=" mb-3 card-general pb-3"  >
+                    <div className="row g-0">
+                        <div className="col-md-4">
+                        <NavLink to={`/item/${item.id}`}><img src={`${item.picture}`} className="img-fluid rounded-start image-item" alt="..." /></NavLink>
                         </div>
-                        <div class="col-md-5">
-                            <div class="card-body">
+                        <div className="col-md-5">
+                            <div className="card-body">
                                 <h5>${item.price.amount}</h5>
                                 <div className='title-direc'>
                                     <NavLink to={`/item/${item.id}`}>{item.title}</NavLink>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="card-user">
-                                <p class="card-text"><small class="text-muted">Nataly Mora</small></p>
+                        <div className="col-md-3">
+                            <div className="card-user">
+                                <p className="card-text"><small className="text-muted">Nataly Mora</small></p>
                             </div>
                         </div>
 

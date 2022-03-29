@@ -21,21 +21,21 @@ export const Item = () => {
 
         <div>
             {loading ?
-                <div class=" mb-3" className='card-general pb-5 ' >
-                    <div class="row g-0">
-                        <div class="col-md-8 img-item">
-                            <img src={`${item.picture}`} class="img-fluid rounded-start "  alt="..." />
+                <div className='card-general pb-5 mb-3' >
+                    <div className="row g-0">
+                        <div className="col-md-8 img-item">
+                            <img src={`${item.picture}`} className="img-fluid rounded-start "  alt="..." />
                         </div>
-                        <div class="col-md-4">
-                            <div class="card-body">
+                        <div className="col-md-4">
+                            <div className="card-body">
                                 <h4>{item.title}</h4>
                                 <h4>$ {item.price.amount}</h4>
-                                <button type="button" class="btn btn-primary button-buy">comprar</button>
+                                <button type="button" className="btn btn-primary button-buy">comprar</button>
                             </div>
                         </div>
                     </div>
-                    <div class="row g-0">
-                        <div class="col-md-7 car-description">
+                    <div className="row g-0">
+                        <div className="col-md-7 car-description">
                             <h5>Descripción del producto</h5>
                             <p>{item.description}</p>
                         </div>

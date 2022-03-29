@@ -31,8 +31,8 @@ code {
 }
 
 .image-item {
-  width: 200px;
-  height: 200px;
+  width: 110px;
+  height: 110px;
   margin-top: 30px;
 }
 
@@ -74,7 +74,7 @@ code {
 .search-button {
   background-color: #EEEE;
   width: 40px;
-  padding-top: 13px;
+  padding-top: 10px;
 }
 
 .input-search {
@@ -113,7 +113,6 @@ code {
 
 
 .card-init img{
-
   padding: 30px;
   
 }

@@ -15,19 +15,16 @@ export const ItemsInit = () => {
         setItems(data.slice(0,4));
 
     }, [])
-
-
     return (
-        <div class="card-group">
-
+        <div className="card-group">
             {
                 items.map(item => {
                     return (
-                        <div class="card card-init">
-                            <img src={`${item.picture}`} class="card-img-top card-general" alt="..." />
-                            <div class="card-body">
-                                <h5 class="title-direc"><NavLink to={`/item/${item.id}`}>{item.title}</NavLink></h5>
-                                <p class="card-text">$ {item.price.amount}</p>
+                        <div className="card card-init">
+                            <NavLink to={`/item/${item.id}`}><img src={`${item.picture}`} className="card-img-top card-general" alt="..." /></NavLink>
+                            <div className="card-body">
+                                <h5 className="title-direc"><NavLink to={`/item/${item.id}`}>{item.title}</NavLink></h5>
+                                <p className="card-text">$ {item.price.amount}</p>
                             </div>
                         </div>
                     )
