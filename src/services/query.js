@@ -8,6 +8,10 @@ export const querySearchItems = (search) => {
             {
                 getAllItemsType(search: "${search}") {
                     id
+                    author{
+                        name
+                        lastName
+                    }
                     title
                     price { 
                     currency 
@@ -33,8 +37,8 @@ export const queryInfoItem = (id) => {
                 id
                 title
                 price { 
-                currency 
-                amount
+                    currency 
+                    amount
                 }
                 picture
                 description
