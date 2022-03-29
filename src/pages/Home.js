@@ -1,7 +1,7 @@
 
-import { Items } from "../components/Items"
+import React from 'react'
+import { ItemsInit } from "../components/ItemsInit"
 import { Nav } from "../components/Nav"
-import Search from "../components/Search"
 
 
 export const Home = () => {
@@ -9,20 +9,14 @@ export const Home = () => {
     return (
         <div>
 
-
             <Nav></Nav>
-            <div className="container-general">
-                <div className="container sub-container">
-                    <Items></Items>
+            <div className="container-general cont-home">
+                <div className="container ">
+                    <ItemsInit></ItemsInit>
                 </div>
-
             </div>
 
-
-
-
         </div>
-
     )
 
 }

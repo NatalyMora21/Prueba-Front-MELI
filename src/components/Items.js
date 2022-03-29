@@ -10,6 +10,8 @@ export const Items = () => {
     const [loading, setLoading] = useState(false);
 
     const [items, setItems] = useState([]);
+
+    
     useEffect(() => {
         setItems(state)
     }, [state])
