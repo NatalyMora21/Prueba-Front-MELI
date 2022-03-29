@@ -8,17 +8,14 @@ export const Items = () => {
 
     const state = useSelector(state => state.items)
     const [loading, setLoading] = useState(false);
-
     const [items, setItems] = useState([]);
+    console.log(state)
 
-    
     useEffect(() => {
         setItems(state)
     }, [state])
 
-
     return (
-
         items.map(item => {
             return (
                 <div className=" mb-3 card-general pb-3"  >
@@ -28,7 +25,7 @@ export const Items = () => {
                         </div>
                         <div className="col-md-5">
                             <div className="card-body">
-                                <h5>${item.price.amount}</h5>
+                                <h5>$ {item.price.amount}</h5>
                                 <div className='title-direc'>
                                     <NavLink to={`/item/${item.id}`}>{item.title}</NavLink>
                                 </div>
@@ -36,7 +33,7 @@ export const Items = () => {
                         </div>
                         <div className="col-md-3">
                             <div className="card-user">
-                                <p className="card-text"><small className="text-muted">Nataly Mora</small></p>
+                                <p className="card-text"><small className="text-muted">{item.author.name} {item.author.lastName}</small></p>
                             </div>
                         </div>
 
