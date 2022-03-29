@@ -35,9 +35,15 @@ const Search = () => {
     return (
         <div class="container-fluid">
             <form class="d-flex" onSubmit={handleSubmit}>
-                <input class="form-control" id="searchWord" name="searchWord"  placeholder="Nunca dejes de buscar" type="text" onChange={handleInputChange} />
-                <button type="submit" id="button-addon2" >Buscar </button>
+                <input class="" id="searchWord" name="searchWord" className="input-search" placeholder="Nunca dejes de buscar" type="text" onChange={handleInputChange} />
+          
+                <div className='search-button'>
+                    <input title="boton enviar" alt="boton enviar" src="/assets/search.png" type="image" />
+                </div>
+
             </form>
+
+                
         </div>
     )
 }

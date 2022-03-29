@@ -5,9 +5,8 @@ import { getItem } from '../services/itemService';
 
 export const Item = () => {
 
-    const { id } = useParams()
-    console.log(id)
-
+    const { id } = useParams();
+    const [loading, setLoading] = useState(false);
     const [item, setItem] = useState("");
 
 
@@ -15,7 +14,9 @@ export const Item = () => {
         
         const data = await getItem(id);
         console.log(data)
+        setLoading(true);
         setItem(data);
+
 
     }, [])
 
@@ -23,19 +24,17 @@ export const Item = () => {
     return (
 
         <div>
-            {item &&
+            {item ?
 
                 <div class=" mb-3" className='card-general pb-5 ' >
                     <div class="row g-0">
-                        <div class="col-md-8">
-                            <img src={`${item.picture}`} class="img-fluid rounded-start " alt="..." />
+                        <div class="col-md-8 img-item">
+                            <img src={`${item.picture}`} class="img-fluid rounded-start "  alt="..." />
                         </div>
                         <div class="col-md-4">
                             <div class="card-body">
-                                <h4>${item.price.amount}</h4>
-                                <div className='title-direc'>
-                                    {item.title}
-                                </div>
+                                <h4>{item.title}</h4>
+                                <h4>$ {item.price.amount}</h4>
                                 <button type="button" class="btn btn-primary button-buy">comprar</button>
                             </div>
                         </div>
@@ -49,6 +48,8 @@ export const Item = () => {
 
 
                 </div>
+                :
+                    <img src={'/assets/loading.gif'} alt="" className='img-loading'></img>
             }
 
         </div>

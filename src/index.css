@@ -21,16 +21,18 @@ code {
 
 .nav-general {
   background-color:#FFE600  !important ;
+  justify-content: center;
 }
 
 .sub-container {
   background-color: #FFFF;
   margin-top: 40px;
+  width: 75%;
 }
 
 .image-item {
-  width: 300px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   margin-top: 30px;
 }
 
@@ -49,7 +51,7 @@ code {
 .title-direc a {
   text-decoration: none;
   color: #000;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .card-general {
@@ -67,4 +69,35 @@ code {
   margin-left: 20px;
   margin-top: 10px;
   text-align: left;
+}
+
+.search-button {
+  background-color: #EEEE;
+  width: 40px;
+  padding-top: 13px;
+}
+
+.input-search {
+  width: 93%;
+  padding-left: 16px;
+  border: 0;
+  outline: none;
+  font-size: 14px;
+}
+
+.logo {
+  width: 51px;
+  height: 36px;
+}
+
+.img-item img {
+  padding-top: 40px;
+  height: 85%;
+  width: 50%;
+}
+
+.img-loading {
+  width: 100px;
+  height: 100px;
+  margin: 100px;
 }
