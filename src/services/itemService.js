@@ -2,19 +2,18 @@ import axios from 'axios';
 import { request, gql } from 'graphql-request'
 import {querySearchItems, queryInfoItem}  from './query'
 
-const baserUrl = ''
+const BASE_URL = process.env.REACT_APP_API_URL;
+console.log(BASE_URL);
 
 export const getAllItems = async (search) => {
-
   const query = querySearchItems (search) ;
-  return request('http://localhost:4001/graph', query).then((data) => data.getAllItemsType)
-
+  return request(`${BASE_URL}`, query).then((data) => data.getAllItemsType)
 }
 
 
 export const getItem = async (id) => {
   const query = queryInfoItem(id)
-  console.log("---")
-  return request('http://localhost:4001/graph', query).then((data) => data.getItem)
+
+  return request(`${BASE_URL}`, query).then((data) => data.getItem)
 
 }
