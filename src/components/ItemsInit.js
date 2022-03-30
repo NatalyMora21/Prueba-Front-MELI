@@ -10,9 +10,9 @@ export const ItemsInit = () => {
     const [items, setItems] = useState([]);
 
     useEffect(async () => {
-        const data = await getAllItems("tv");
+        const data = await getAllItems("iphone");
         console.log(data)
-        setItems(data.slice(0,4));
+        setItems(data.items.slice(0,4));
 
     }, [])
     return (

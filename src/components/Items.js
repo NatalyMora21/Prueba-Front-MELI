@@ -7,12 +7,13 @@ import { useParams } from 'react-router';
 export const Items = () => {
 
     const state = useSelector(state => state.items)
-    const [loading, setLoading] = useState(false);
     const [items, setItems] = useState([]);
+    const [author, setAuthor] = useState([]);
     console.log(state)
 
     useEffect(() => {
-        setItems(state)
+        setItems(state.items)
+        setAuthor(state.author)
     }, [state])
 
     return (
@@ -33,7 +34,7 @@ export const Items = () => {
                         </div>
                         <div className="col-md-3">
                             <div className="card-user">
-                                <p className="card-text"><small className="text-muted">{item.author.name} {item.author.lastName}</small></p>
+                                <p className="card-text"><small className="text-muted">{author.name} {author.lastName}</small></p>
                             </div>
                         </div>
 

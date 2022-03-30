@@ -22,9 +22,7 @@ const Search = () => {
         console.log(search);
 
         if (info != '') {
-            //setMensajealert(false);
             const data = await getAllItems(info);
-            console.log("---")
             console.log(data)
             dispatch(initItems(data));
             navigate('/items/search')

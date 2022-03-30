@@ -11,8 +11,9 @@ export const Item = () => {
 
     useEffect(async () => {
         const data = await getItem(id);
+        console.log("---")
         console.log(data)
-        setItem(data);
+        setItem(data.item);
         setLoading(true);
     }, [])
 
