@@ -10,7 +10,6 @@ export const getAllItems = async (search) => {
   return data;
 }
 
-
 export const getItem = async (id) => {
   const {data} = await axios(`${BASE_URL}/item/${id}`);
   console.log(data);

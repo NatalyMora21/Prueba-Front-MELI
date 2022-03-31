@@ -25,13 +25,8 @@ const Search = () => {
             const data = await getAllItems(info);
             console.log(data)
             dispatch(initItems(data));
-            navigate('/items/search')
+            navigate(`/items/search/${search}`)
         }
-
-
-
-
-
     }
     return (
         <div class="container-fluid">
@@ -44,7 +39,7 @@ const Search = () => {
                 </div>
 
             </form>
-
+            
         </div>
     )
 }

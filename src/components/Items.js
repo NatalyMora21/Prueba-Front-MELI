@@ -3,14 +3,18 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router';
+import { getAllItems } from '../services/itemService'
+import { initItems } from '../stateHandler/actions/itemAction'
+
 
 export const Items = () => {
+    const { title } = useParams();
 
     const state = useSelector(state => state.items)
     const [items, setItems] = useState([]);
     const [author, setAuthor] = useState([]);
-    console.log(state)
-
+    const dispatch = useDispatch();
+    
     useEffect(() => {
         setItems(state.items)
         setAuthor(state.author)
@@ -22,7 +26,7 @@ export const Items = () => {
                 <div className=" mb-3 card-general pb-3"  >
                     <div className="row g-0">
                         <div className="col-md-4">
-                        <NavLink to={`/item/${item.id}`}><img src={`${item.picture}`} className="img-fluid rounded-start image-item" alt="..." /></NavLink>
+                            <NavLink to={`/item/${item.id}`}><img src={`${item.picture}`} className="img-fluid rounded-start image-item" alt="..." /></NavLink>
                         </div>
                         <div className="col-md-5">
                             <div className="card-body">
@@ -34,7 +38,10 @@ export const Items = () => {
                         </div>
                         <div className="col-md-3">
                             <div className="card-user">
-                                <p className="card-text"><small className="text-muted">{author.name} {author.lastName}</small></p>
+                                <p>Envío gratis:{item.free_shipping ? <small > Si</small> :
+                                    <small >No</small>
+                                }</p>
+
                             </div>
                         </div>
 

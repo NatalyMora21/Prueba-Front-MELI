@@ -7,12 +7,12 @@ export const InfoItem = () => {
 
     return (
         <div>
+
             <Nav></Nav>
             <div className="container-general">
                 <div className="container sub-container">
                     <Item></Item>
                 </div>
-
             </div>
 
         </div>

@@ -6,8 +6,6 @@ export const initItems = items => {
         type: 'LIST-NOTE',
         payload: items
     }
-
-
 }
 
 

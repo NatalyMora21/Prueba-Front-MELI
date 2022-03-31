@@ -8,12 +8,12 @@ export const Item = () => {
     const { id } = useParams();
     const [loading, setLoading] = useState(false);
     const [item, setItem] = useState("");
+    const [author, setAuthor] = useState("");
 
     useEffect(async () => {
         const data = await getItem(id);
-        console.log("---")
-        console.log(data)
         setItem(data.item);
+        setAuthor(data.author)
         setLoading(true);
     }, [])
 
@@ -31,6 +31,8 @@ export const Item = () => {
                             <div className="card-body">
                                 <h4>{item.title}</h4>
                                 <h4>$ {item.price.amount}</h4>
+                                <p>Vendido por: {author.name} {author.lastName}</p>
+                                <p>Cantidades vendidas: {item.sold_quantity}</p>
                                 <button type="button" className="btn btn-primary button-buy">comprar</button>
                             </div>
                         </div>

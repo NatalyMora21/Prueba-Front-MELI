@@ -9,19 +9,14 @@ export const ItemsSearh = () => {
     return (
         <div>
 
-
             <Nav></Nav>
             <div className="container-general">
                 <div className="container sub-container">
                     <Items></Items>
                 </div>
-
             </div>
-
-
-
 
         </div>
 
     )
-    }
+}

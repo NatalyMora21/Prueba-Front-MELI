@@ -20,7 +20,7 @@ function App() {
      
           </Route>
 
-          <Route path="/items/search" element={<ItemsSearh />}>
+          <Route path="/items/search/:title" element={<ItemsSearh />}>
 
           </Route>
           <Route path="/item/:id" element= {<InfoItem/>}>

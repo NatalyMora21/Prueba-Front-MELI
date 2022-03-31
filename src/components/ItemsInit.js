@@ -13,8 +13,8 @@ export const ItemsInit = () => {
         const data = await getAllItems("iphone");
         console.log(data)
         setItems(data.items.slice(0,4));
-
     }, [])
+    
     return (
         <div className="card-group">
             {

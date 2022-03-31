@@ -6,9 +6,6 @@ import { Item } from '../components/Item'
 import { renderHook } from '@testing-library/react-hooks';
 import { itemReducer } from '../stateHandler/reducers/itemReducer';
 
-
-
-
 const data = {
 
     author: {
@@ -42,6 +39,7 @@ const data = {
         }
     ]
 }
+
 
 describe('Items', () => {
 
