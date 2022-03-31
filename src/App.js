@@ -10,17 +10,6 @@ import { InfoItem } from './pages/InfoItem';
 
 function App() {
 
-  /*const dispatch = useDispatch ();
-
-  useEffect ( async ()=> {
-    console.log("INGRESO")
-    const data = await getAllItems();
-    //console.log("---")
-    //console.log(data)
-    //dispatch(initItems(data));
-  },[])*/
-
-
   return (
     <div className="App">
 
